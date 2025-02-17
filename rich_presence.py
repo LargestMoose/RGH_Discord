@@ -113,10 +113,10 @@ def set_game(ip_address, start_time, last_title_id, last_printed_minute):
         last_printed_minute = current_minute
     
     RPC.update(
-        state=f"{elapsed_time}",
         details=f"{game_name}",
         large_image=image_url,
-        large_text=game_name
+        large_text=game_name,
+        start=int(start_time.timestamp())
     )
     
     return start_time, last_title_id, last_printed_minute
